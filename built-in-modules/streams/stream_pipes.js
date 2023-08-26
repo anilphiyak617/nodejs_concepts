@@ -9,7 +9,13 @@ const readableStream = fs.createReadStream("./file.txt", {
 const writableStream = fs.WriteStream("./file2.txt");
 // "data" event is emmited by the readableStream  while stremaing the
 // data from the file
-readableStream.on("data", (chunks) => {
-  console.log(chunks.toString());
-  writableStream.write(chunks);
-});
+// readableStream.on("data", (chunks) => {
+//   console.log(chunks.toString());
+//   writableStream.write(chunks);
+// });
+
+console.log("after streaming");
+// PIPING
+const writableStreamFile3 = fs.createWriteStream("./file3.txt");
+readableStream.pipe(writableStreamFile3);
+readableStream.pipe(writableStream);
