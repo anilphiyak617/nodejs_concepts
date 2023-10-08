@@ -1,0 +1,14 @@
+{
+  "name": "libuv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev experiments_callbacks.ts"
+  },
+  "dependencies": {
+    "@types/node": "^20.8.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
+}
